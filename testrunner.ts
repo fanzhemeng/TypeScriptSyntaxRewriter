@@ -36,7 +36,7 @@ function printAST(node: ts.Node, n: number): void {
     var tabs = "";
     for (var i = 0; i < n; i++)
         tabs += "   ";
-    console.log(tabs + (<any>ts).SyntaxKind[node.kind.toString()]+ ": " + node.getText());
+    console.log(tabs + (<any>ts).SyntaxKind[node.kind.toString()] + ": " + node.getText());
     //node.kind == ts.SyntaxKind.NumericLiteral;
     var children = node.getChildren();
     for (var child = 0; child < node.getChildCount(); child++) {

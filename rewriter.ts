@@ -2,7 +2,6 @@
 
 import * as ts from "typescript";
 
-
 module tss {
     export module Factory {
         export function createStringLiteral(text: string, location?: ts.TextRange, flags?: ts.NodeFlags): ts.StringLiteral {
@@ -1298,9 +1297,7 @@ module tss {
             }
         }
     }
-}
 
-module tss {
     export module Factory {
         export function isLeftHandSideExpression(expr: ts.Node): boolean {
             if (expr) {
@@ -1346,7 +1343,7 @@ module tss {
         }
 
         export function createVoidZero(location?: ts.TextRange, flags?: ts.NodeFlags): ts.VoidExpression {
-            return tss.Factory.createVoidExpression(tss.Factory.createNumericLiteral(0, location, flags), location, flags);
+            return createVoidExpression(createNumericLiteral(0, location, flags), location, flags);
         }
 
         export function makeLeftHandSideExpression(expression: ts.Expression): ts.LeftHandSideExpression {
